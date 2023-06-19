@@ -1,69 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<config xmlns="http://artifactory.jfrog.org/xsd/3.2.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://releases.jfrog.io/artifactory/static-release-virtual/xsd/artifactory/artifactory-v3_2_6.xsd">
-    <offlineMode>false</offlineMode>
-    <archiveIndexEnabled>false</archiveIndexEnabled>
-    <fileUploadMaxSizeMb>100</fileUploadMaxSizeMb>
-    <revision>2</revision>
-    <addons>
-        <showAddonsInfo>true</showAddonsInfo>
-        <showAddonsInfoCookie>1685377190464</showAddonsInfoCookie>
-    </addons>
-    <security>
-        <hideUnauthorizedResources>false</hideUnauthorizedResources>
-        <passwordSettings>
-            <expirationPolicy>
-                <enabled>false</enabled>
-                <passwordMaxAge>60</passwordMaxAge>
-                <notifyByEmail>true</notifyByEmail>
-            </expirationPolicy>
-            <resetPolicy>
-                <enabled>true</enabled>
-                <maxAttemptsPerAddress>3</maxAttemptsPerAddress>
-                <timeToBlockInMinutes>60</timeToBlockInMinutes>
-            </resetPolicy>
-        </passwordSettings>
-        <ldapSettings/>
-        <ldapGroupSettings/>
-        <oauthSettings>
-            <enableIntegration>false</enableIntegration>
-            <allowUserToAccessProfile>false</allowUserToAccessProfile>
-            <persistUsers>false</persistUsers>
-            <oauthProvidersSettings/>
-        </oauthSettings>
-        <buildGlobalBasicReadAllowed>false</buildGlobalBasicReadAllowed>
-        <buildGlobalBasicReadForAnonymous>false</buildGlobalBasicReadForAnonymous>
-    </security>
-    <backups>
-        <backup>
-            <key>backup-daily</key>
-            <enabled>true</enabled>
-            <cronExp>0 0 2 ? * MON-FRI</cronExp>
-            <retentionPeriodHours>0</retentionPeriodHours>
-            <createArchive>false</createArchive>
-            <excludedRepositories/>
-            <sendMailOnError>true</sendMailOnError>
-            <excludeNewRepositories>false</excludeNewRepositories>
-            <precalculate>false</precalculate>
-            <exportMissionControl>false</exportMissionControl>
-        </backup>
-        <backup>
-            <key>backup-weekly</key>
-            <enabled>false</enabled>
-            <cronExp>0 0 2 ? * SAT</cronExp>
-            <retentionPeriodHours>336</retentionPeriodHours>
-            <createArchive>false</createArchive>
-            <excludedRepositories/>
-            <sendMailOnError>true</sendMailOnError>
-            <excludeNewRepositories>false</excludeNewRepositories>
-            <precalculate>false</precalculate>
-            <exportMissionControl>false</exportMissionControl>
-        </backup>
-    </backups>
-    <indexer>
-        <enabled>false</enabled>
-        <cronExp>0 23 5 * * ?</cronExp>
-    </indexer>
-    <localRepositories/>
+<config xmlns="http://artifactory.jfrog.org/xsd/3.1.26" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jfrog.org/xsd/artifactory-v3_1_26.xsd">
+<!--  This file content can be retrieved from the /opt/jfrog/artifactory/var/etc/artifactory/artifactory.config.latest.xml path inside container-->
+    <localRepositories>
+        <localRepository>
+            <key>docker_registry</key>
+            <type>docker</type>
+            <description>Panda docker repository</description>
+            <notes></notes>
+            <includesPattern>**/*</includesPattern>
+            <excludesPattern></excludesPattern>
+            <repoLayoutRef>simple-default</repoLayoutRef>
+            <dockerApiVersion>V2</dockerApiVersion>
+            <forceNugetAuthentication>false</forceNugetAuthentication>
+            <forceConanAuthentication>false</forceConanAuthentication>
+            <ddebSupported>false</ddebSupported>
+            <signedUrlTtl>90</signedUrlTtl>
+            <blackedOut>false</blackedOut>
+            <handleReleases>true</handleReleases>
+            <handleSnapshots>true</handleSnapshots>
+            <maxUniqueSnapshots>0</maxUniqueSnapshots>
+            <maxUniqueTags>0</maxUniqueTags>
+            <blockPushingSchema1>true</blockPushingSchema1>
+            <suppressPomConsistencyChecks>true</suppressPomConsistencyChecks>
+            <propertySets/>
+            <archiveBrowsingEnabled>false</archiveBrowsingEnabled>
+            <priorityResolution>false</priorityResolution>
+            <snapshotVersionBehavior>unique</snapshotVersionBehavior>
+            <localRepoChecksumPolicyType>client-checksums</localRepoChecksumPolicyType>
+            <calculateYumMetadata>false</calculateYumMetadata>
+            <yumRootDepth>0</yumRootDepth>
+            <debianTrivialLayout>false</debianTrivialLayout>
+            <enableFileListsIndexing>false</enableFileListsIndexing>
+            <dockerTagRetention>1</dockerTagRetention>
+            <enableComposerV1Indexing>false</enableComposerV1Indexing>
+            <terraformType>MODULE</terraformType>
+        </localRepository>
+    </localRepositories>
     <remoteRepositories/>
     <virtualRepositories/>
     <federatedRepositories/>
@@ -220,7 +192,7 @@
         </repoLayout>
         <repoLayout>
             <name>swift-default</name>
-            <artifactPathPattern>[scope]/[name]/[name]-[version].zip</artifactPathPattern>
+            <artifactPathPattern>[scope]/[name]/[version].zip</artifactPathPattern>
             <distinctiveDescriptorPathPattern>false</distinctiveDescriptorPathPattern>
             <folderIntegrationRevisionRegExp>.*</folderIntegrationRevisionRegExp>
             <fileIntegrationRevisionRegExp>.*</fileIntegrationRevisionRegExp>
@@ -268,7 +240,7 @@
     </downloadRedirectConfig>
     <eula>
         <accepted>true</accepted>
-        <acceptDate>2023-05-29T16:25:20.126Z</acceptDate>
+        <acceptDate>2022-02-24T18:40:18.472Z</acceptDate>
     </eula>
     <keyPairs/>
     <retentionSettings>

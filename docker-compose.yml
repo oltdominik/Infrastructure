@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   artifactory:
-    image: docker.bintray.io/jfrog/artifactory-jcr:latest
+    image: docker.bintray.io/jfrog/artifactory-jcr:7.39.4
     container_name: artifactory
     ports:
       - "8081:8081"
@@ -41,7 +41,7 @@ services:
     ports:
       - "2222:22"
     environment:
-      - JENKINS_AGENT_SSH_PUBKEY="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDjQtvdFMTy+HfghXuFABz2fWKH8MI034g1c6tJyIxdUYbrCXbnpjlQT2bqj6KRMNuddZnd1XeVdEyusPelRMg8TI5Ll0nS9DWIPYuefUXyWyP0GBHADGl7m02TkvIhsFU4TUiS6K2KQMi/G3YBFLcqs5h+z+1ZkzxWt8wnB+lp2w=="
+      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaJxXl+C4GsmIcrsXQ+mqS/t9SNsFrtj5LffdnNr8+9a40UUHDX1mKe26U8oSarCciLYEtXWsWtl1VmQS6JAdVI5vZKS2J0Nt6oe+AH9y2PhL6wtqUsel2aJHUk8w13Dfkt+w6tZBQxCuzBDvWRt6hsprVuJvWoICMZanVOoXb+BfJx9133mG/uviF/rgtEqn5CqTbHWN1cUs+jei0GOlfyQr/GR7P5cP6baxe5yxCebohlgbYvDrwUT2ZBSlJHIaqbrbeBF/yigCcWCA9z46PubKc/qIcDY5qeFuldy0mqEdpMILDLjcrtidnp4wvRa8cxZl4w9fNYGwK8C56/b9n
     restart: always
 
   sonarqube:
